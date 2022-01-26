@@ -1,0 +1,289 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+class bangun_ruang
+{
+  protected:
+       double s; //(s) Sisi
+  public:
+       virtual void input()=0;
+       virtual void tampilan()=0;
+};
+class luas_bujursangkar : public bangun_ruang
+{
+   public:
+    	void input(void)
+   		{
+       		cout<<"------------------------------------\n";
+       		cout<<"Masukkan Angka Untuk Menghitung Luas Bujursangkar : \n\n";
+          cout<<"Sisi = "; 
+	  		  cin>>s;
+   		}
+   		
+    	void tampilan(void)
+    	{
+       	double luas;
+        luas = s*s; //rumus
+       		cout<<"----------------------------------------\n";
+       		cout<<"----------------------------------------\n";
+       		cout<<"Diketahui : Sisi = "<<s;
+       		cout<<"\nDitanya   : Luas Bujursangkar  ";
+       		cout<<"\n\nPenyelesaian : ";
+       		cout<<"\nLuas Bujursangkar 	 = Sisi x Sisi ";
+       		cout<<"\n                    = "<< s<< " x "<<s;
+      	  cout<<"\n                    = "<<luas;
+       		cout<<"\n----------------------------------------\n";
+    	}
+};
+
+class volume_kubus : public bangun_ruang
+{
+   	public:
+		void input(void)
+    	{
+       		cout<<"------------------------------------\n";
+       		cout<<"Masukkan Angka Untuk Menghitung Volume Kubus : \n\n";
+       		cout<<"Sisi = "; 
+	   		  cin>>s;
+    	}
+    	
+		void tampilan(void)
+    	{
+       	double volume;
+       	volume = s*s*s; //rumus
+       		cout<<"----------------------------------------\n";
+       		cout<<"----------------------------------------\n";
+       		cout<<"Diketahui : Sisi = "<<s; 
+       		cout<<"\nDitanya   : Volume Kubus ";
+       		cout<<"\n\nPenyelesaian : ";
+       		cout<<"\nVolume Kubus = Sisi x Sisi x Sisi ";
+       		cout<<"\n              = "<<s<< " x " <<s<< " x " <<s;
+       		cout<<"\n              = "<<volume;
+       		cout<<"\n----------------------------------------\n";
+    	}
+};#include <iostream>
+#include <conio.h>
+using namespace std;
+
+class bangun_ruang
+{
+  protected:
+       double s; //(s) Sisi
+  public:
+       virtual void input()=0;
+       virtual void tampilan()=0;
+};
+class luas_bujursangkar : public bangun_ruang
+{
+   public:
+    	void input(void)
+   		{
+       		cout<<"------------------------------------\n";
+       		cout<<"Masukkan Angka Untuk Menghitung Luas Bujursangkar : \n\n";
+       		cout<<"Sisi = "; 
+	  		cin>>s;
+   		}
+   		
+    	void tampilan(void)
+    	{
+       	double luas;
+        luas = s*s; //rumus
+       		cout<<"----------------------------------------\n";
+       		cout<<"----------------------------------------\n";
+       		cout<<"Diketahui : Sisi = "<<s;
+       		cout<<"\nDitanya   : Luas Bujursangkar  ";
+       		cout<<"\n\nPenyelesaian : ";
+       		cout<<"\nLuas Bujursangkar 	 = Sisi x Sisi ";
+       		cout<<"\n                    = "<< s<< " x "<<s;
+      	  	cout<<"\n                    = "<<luas;
+       		cout<<"\n----------------------------------------\n";
+    	}
+};
+
+class volume_kubus : public bangun_ruang
+{
+   	public:
+		void input(void)
+    	{
+       		cout<<"------------------------------------\n";
+       		cout<<"Masukkan Angka Untuk Menghitung Volume Kubus : \n\n";
+       		cout<<"Sisi = "; 
+	   		cin>>s;
+    	}
+    	
+		void tampilan(void)
+    	{
+       	double volume;
+       	volume = s*s*s; //rumus
+       		cout<<"----------------------------------------\n";
+       		cout<<"----------------------------------------\n";
+       		cout<<"Diketahui : Sisi = "<<s; 
+       		cout<<"\nDitanya   : Volume Kubus ";
+       		cout<<"\n\nPenyelesaian : ";
+       		cout<<"\nVolume Kubus = Sisi x Sisi x Sisi ";
+       		cout<<"\n              = "<<s<< " x " <<s<< " x " <<s;
+       		cout<<"\n              = "<<volume;
+       		cout<<"\n----------------------------------------\n";
+    	}
+};
+
+class luas_bujursangkar_dan_volume_kubus : public bangun_ruang
+{
+    public:
+    	void input(void)
+    	{
+       		cout<<"------------------------------------\n";
+			cout<<"Masukkan Angka Untuk Menghitung\n";
+			cout<<"\nLuas Bujursangkar dan Volume Kubus : ";
+       		cout<<"\nSisi     = "; 
+	   		cin>>s;
+    }
+		void tampilan(void)
+    	{
+        double bujursangkar, volume;
+        bujursangkar = s*s; //rumus luas Bujursangkar
+        volume = s*s*s; //rumus Volume Kubus
+       		cout<<"----------------------------------------\n";
+       		cout<<"----------------------------------------\n";
+       		cout<<"Diketahui : Sisi = "<<s; 
+       		cout<<"\nDitanya   : Luas Bujursangkar  ";
+       		cout<<"\n          : Volume Kubus       ";
+       		cout<<"\n\nPenyelesaian : ";
+       		cout<<"\nLuas Bujursangkar   = Sisi x Sisi ";
+       		cout<<"\n               = "<< s<< " x "<<s;
+       		cout<<"\n               = "<<bujursangkar;
+       		cout<<"\nVolume Tabung  = sisi x sisi x sisi ";
+       		cout<<"\n               = "<<s<< " x " <<s<< " x " <<s;
+       		cout<<"\n               = "<<volume;
+       		cout<<"\n----------------------------------------\n";
+    	}
+};
+
+int main()
+{
+	system("cls");
+	luas_bujursangkar luas;
+	volume_kubus volume;
+	luas_bujursangkar_dan_volume_kubus luasvolume;
+
+bangun_ruang *list[3];
+list[1]=&luas;
+list[2]=&volume;
+list[3]=&luasvolume;
+
+int pilihan;
+while(1)
+{
+	system("cls");
+  		cout<<"-------------------------------------------";
+  		cout<<"\n|      MENGHITUNG BANGUN RUANG Kubus      |\n";
+  		cout<<"-------------------------------------------\n";
+  		cout<<"|  Anugrah Ardhi Latief Maulana 20030009  |\n";
+  		cout<<"------------------------------------------\n";
+  		cout<<"| 1. Luas Bujursangkar                    |\n";
+ 		cout<<"| 2. Volume Kubus 	                  |\n";
+ 		cout<<"| 3. Luas Bujursangkar & Volume Kubus     |\n";
+ 		cout<<"------------------------------------------\n";
+ 		cout<<"Pilih 1-3 untuk menghitung: ";
+ 		cin>>pilihan;
+  
+  	if (pilihan==1){
+          list[1]->input();
+          list[1]->tampilan();
+          getch();
+          }
+  	else if (pilihan==2){
+          list[2]->input();
+          list[2]->tampilan();
+          getch();
+          }
+  	else if (pilihan==3){
+          list[3]->input();
+          list[3]->tampilan();
+          getch();
+          }
+  	else
+    	exit(1);
+}}
+
+
+
+class luas_bujursangkar_dan_volume_kubus : public bangun_ruang
+{
+    public:
+    	void input(void)
+    	{
+       		cout<<"------------------------------------\n";
+			    cout<<"Masukkan Angka Untuk Menghitung\n";
+			    cout<<"\nLuas Bujursangkar dan Volume Kubus : ";
+          cout<<"\nSisi     = "; 
+	   		  cin>>s;
+    }
+		void tampilan(void)
+    	{
+        double bujursangkar, volume;
+        bujursangkar = s*s; //rumus luas Bujursangkar
+        volume = s*s*s; //rumus Volume Kubus
+       		cout<<"----------------------------------------\n";
+       		cout<<"----------------------------------------\n";
+       		cout<<"Diketahui : Sisi = "<<s; 
+       		cout<<"\nDitanya   : Luas Bujursangkar  ";
+       		cout<<"\n          : Volume Kubus       ";
+       		cout<<"\n\nPenyelesaian : ";
+       		cout<<"\nLuas Bujursangkar   = Sisi x Sisi ";
+       		cout<<"\n               = "<< s<< " x "<<s;
+       		cout<<"\n               = "<<bujursangkar;
+       		cout<<"\nVolume Tabung  = sisi x sisi x sisi ";
+       		cout<<"\n               = "<<s<< " x " <<s<< " x " <<s;
+       		cout<<"\n               = "<<volume;
+       		cout<<"\n----------------------------------------\n";
+    	}
+};
+
+int main()
+{
+	system("cls");
+	luas_bujursangkar luas;
+	volume_kubus volume;
+	luas_bujursangkar_dan_volume_kubus luasvolume;
+
+bangun_ruang *list[3];
+list[1]=&luas;
+list[2]=&volume;
+list[3]=&luasvolume;
+
+int pilihan;
+while(1)
+{
+	system("cls");
+  	cout<<"-------------------------------------------";
+  	cout<<"\n|      MENGHITUNG BANGUN RUANG Kubus      |\n";
+  	cout<<"-------------------------------------------\n";
+  	cout<<"|  Anugrah Ardhi Latief Maulana 20030009  |\n";
+    cout<<"------------------------------------------\n";
+  	cout<<"| 1. Luas Bujursangkar                    |\n";
+ 		cout<<"| 2. Volume Kubus 	                  |\n";
+ 		cout<<"| 3. Luas Bujursangkar & Volume Kubus     |\n";
+ 		cout<<"------------------------------------------\n";
+ 		cout<<"Pilih 1-3 untuk menghitung: ";
+ 		cin>>pilihan;
+  
+  	if (pilihan==1){
+          list[1]->input();
+          list[1]->tampilan();
+          getch();
+          }
+  	else if (pilihan==2){
+          list[2]->input();
+          list[2]->tampilan();
+          getch();
+          }
+  	else if (pilihan==3){
+          list[3]->input();
+          list[3]->tampilan();
+          getch();
+          }
+  	else
+    	exit(1);
+}}
